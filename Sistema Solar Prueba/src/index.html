@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Solar</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+
+        body { margin: 0; overflow: hidden; font-family: Arial, sans-serif; }
+        #menu-toggle {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.7);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #menu {
+            position: fixed;
+            left: -400px;
+            top:30px;
+            width: 150px;
+            max-height: 400px;
+            overflow-y: auto;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            overflow-: auto;
+            transition: left 0.3s ease-in-out;
+        }
+        #menu.open { left: 0; }
+        .planet-item {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px 0;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .planet-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        #info-panel {
+            position: fixed;
+            right: -10px;
+            top: -30px;
+            width: 400px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            display: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<button id="menu-toggle">☰</button>
+<div id="menu">
+    <h2>Celesital Bodies</h2>
+    <!-- Los elementos del menú se agregarán dinámicamente con JavaScript -->
+</div>
+<div id="info-panel">
+    <h3 id="planet-name-title">Nombre del planeta</h3>
+    <p id="planet-info-display">Aquí se mostrará la información del planeta.</p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
